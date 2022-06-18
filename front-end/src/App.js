@@ -2,10 +2,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Link, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Home from "./pages/Home";
-import Create from "./pages/Create";
-import Edit from "./pages/Edit";
-import View from "./pages/View";
+import Home from "./pages/Users/Home";
+import Create from "./pages/Users/Create";
+import Edit from "./pages/Users/Edit";
+import View from "./pages/Users/View";
 function App() {
   return (
     <div>
@@ -74,7 +74,6 @@ function App() {
       </nav>
       <div className="container">
         <Routes>
-          
           <Route path="/" element={<Home />}></Route>
           <Route path="/create" element={<Create />}></Route>
           <Route path="/edit/:id" element={<Edit />}></Route>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import http from "../http";
+import http from "../../http";
 const Create = () => {
   const navigate = useNavigate();
   const [inputs, setInputs] = useState({});
