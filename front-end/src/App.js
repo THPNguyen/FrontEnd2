@@ -6,6 +6,11 @@ import Home from "./pages/Users/Home";
 import Create from "./pages/Users/Create";
 import Edit from "./pages/Users/Edit";
 import View from "./pages/Users/View";
+import ViewProduct from "./pages/Product/ViewDetailProduct";
+import EditProduct from "./pages/Product/EditProduct";
+import AllProduct from "./pages/Product/AllProduct";
+import AllCategory from "./pages/Category/AllCategory";
+import EditCategory from "./pages/Category/EditCategory";
 function App() {
   return (
     <div>
@@ -36,25 +41,15 @@ function App() {
                 Create
               </Link>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="dropdownId"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <div className="dropdown-menu" aria-labelledby="dropdownId">
-                <a className="dropdown-item" href="#">
-                  Action 1
-                </a>
-                <a className="dropdown-item" href="#">
-                  Action 2
-                </a>
-              </div>
+            <li className="nav-item">
+              <Link to={"/products"} className={"nav-link"}>
+                AllProduct
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to={"/categories"} className={"nav-link"}>
+                Category
+              </Link>
             </li>
           </ul>
           <form className="form-inline my-2 my-lg-0">
@@ -78,6 +73,15 @@ function App() {
           <Route path="/create" element={<Create />}></Route>
           <Route path="/edit/:id" element={<Edit />}></Route>
           <Route path="/view/:id" element={<View />}></Route>
+
+          {/* Product */}
+          <Route path="/products" element={<AllProduct />}></Route>
+          <Route path="/products/view/:id" element={<ViewProduct />}></Route>
+          <Route path="/products/edit/:id" element={<EditProduct />}></Route>
+
+          {/* Category */}
+          <Route path="/categories" element={<AllCategory />}></Route>
+          <Route path="/categories/edit/:id" element={<EditCategory />}></Route>
         </Routes>
       </div>
     </div>
